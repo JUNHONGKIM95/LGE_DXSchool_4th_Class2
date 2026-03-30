@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Actor 0 — 김영희</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+    background: #F5F0EE;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
+  .slide {
+    width: 1280px;
+    height: 720px;
+    background: #F5F0EE;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 헤더 */
+  .header {
+    background: linear-gradient(135deg, #E8596E 0%, #D94459 100%);
+    padding: 20px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+  .header-left { display: flex; flex-direction: column; gap: 4px; }
+  .actor-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .name-row { display: flex; align-items: baseline; gap: 12px; }
+  .name { font-size: 28px; font-weight: 700; color: #ffffff; letter-spacing: -0.02em; }
+  .age { font-size: 15px; font-weight: 400; color: rgba(255,255,255,0.85); }
+  .persona-desc { font-size: 13px; color: rgba(255,255,255,0.8); font-weight: 400; margin-top: 2px; }
+
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+  }
+  .header-badge {
+    font-size: 11px;
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+    background: rgba(255,255,255,0.15);
+    padding: 4px 14px;
+    border-radius: 99px;
+  }
+  .tags { display: flex; gap: 5px; flex-wrap: wrap; align-items: center; justify-content: flex-end; }
+  .tag {
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 99px;
+    background: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.9);
+    border: none;
+    letter-spacing: 0.02em;
+  }
+
+  /* 메인 콘텐츠 */
+  .main-content {
+    flex: 1;
+    padding: 16px 32px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* Desire + Artifacts */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .col-box {
+    background: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 18px 22px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    position: relative;
+  }
+  .col-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .col-num {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #E8596E;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .col-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #E8596E;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .col-item {
+    font-size: 12.5px;
+    color: #555;
+    line-height: 1.6;
+    padding: 7px 0;
+    border-bottom: 1px solid #f0ebe9;
+  }
+  .col-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .col-item b { color: #333; font-weight: 600; }
+
+  /* 분석 레이어 */
+  .layers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 12px;
+    flex: 1;
+  }
+  .layer {
+    border-radius: 12px;
+    padding: 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  .layer-num {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 99px;
+    align-self: flex-start;
+    letter-spacing: 0.04em;
+  }
+  .layer-body {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.85;
+    flex: 1;
+  }
+  .layer-body b { color: #333; font-weight: 600; }
+  .layer-body .sub-item {
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+  .layer-body .sub-item:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
+  .l1 { background: #ffffff; border: 1px solid #f0ebe9; }
+  .l1 .layer-num { background: #FDEAEC; color: #E8596E; }
+
+  .l2 { background: #ffffff; border: 1px solid #f0ebe9; }
+  .l2 .layer-num { background: #EDE8FA; color: #7B6DC2; }
+
+  .l3 { background: #ffffff; border: 1px solid #f0ebe9; }
+  .l3 .layer-num { background: #FDE8E0; color: #D4653A; }
+
+  .l4 { background: #ffffff; border: 1px solid #f0ebe9; }
+  .l4 .layer-num { background: #FDF3E0; color: #C28520; }
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <!-- 헤더 -->
+  <div class="header">
+    <div class="header-left">
+      <span class="actor-badge">Actor 0</span>
+      <div class="name-row">
+        <span class="name">김영희</span>
+        <span class="age">33세</span>
+      </div>
+      <div class="persona-desc">출산 불안을 정보로 다스리는 예비맘</div>
+    </div>
+    <div class="header-right">
+      <span class="header-badge">LG전자 DX School</span>
+      <div class="tags">
+        <span class="tag">#예비엄마</span>
+        <span class="tag">#첫임신</span>
+        <span class="tag">#정보탐색형</span>
+        <span class="tag">#커뮤니티의존</span>
+        <span class="tag">#출산준비</span>
+        <span class="tag">#산후조리</span>
+        <span class="tag">#불안관리</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-content">
+
+    <!-- Desire + Artifacts -->
+    <div class="two-col">
+      <div class="col-box">
+        <div class="col-title-wrap">
+          <span class="col-num">1</span>
+          <span class="col-title">Desire</span>
+        </div>
+        <div class="col-item"><b>안전한 출산</b> — 이상 징후 없이 순산하고 싶다</div>
+        <div class="col-item"><b>정보 완성</b> — 단계별 정보를 하나도 놓치고 싶지 않다</div>
+        <div class="col-item"><b>공감·연결</b> — 나 같은 엄마들과 연결되어 안심하고 싶다</div>
+      </div>
+      <div class="col-box">
+        <div class="col-title-wrap">
+          <span class="col-num">2</span>
+          <span class="col-title">Artifacts</span>
+        </div>
+        <div class="col-item"><b>맘카페·커뮤니티</b> — 정보 수집과 감정 공유의 주 채널</div>
+        <div class="col-item"><b>임신 주차별 앱</b> — 체크리스트·일정 파악 도구</div>
+        <div class="col-item"><b>산후조리원 후기</b> — 의사결정의 핵심 근거</div>
+        <div class="col-item"><b>포털·유튜브 검색</b> — 증상·궁금증 실시간 해소</div>
+      </div>
+    </div>
+
+    <!-- 분석 레이어 4컬럼 -->
+    <div class="layers">
+
+      <div class="layer l1">
+        <span class="layer-num">01 인구통계학적</span>
+        <div class="layer-body">
+          중견 유통회사에 다니는 <b>33세 직장인 여성</b>. 결혼 2년차, 첫 임신 중(임신 20주차). 서울 외곽 신혼집에 남편과 거주 중이며 맞벌이. 출산 후 육아휴직 예정이나 복직 시점은 미정.
+        </div>
+      </div>
+
+      <div class="layer l2">
+        <span class="layer-num">02 상황 맥락적</span>
+        <div class="layer-body">
+          최근 배뭉침 증상이 잦아지며 <b>이상 징후에 대한 불안이 높아진 상태</b>. 산후조리원 예약을 알아보기 시작했고, 출산 준비물 리스트를 맘카페에서 수집 중. 주변에 먼저 출산한 친구가 없어 <b>온라인 커뮤니티가 유일한 정보·공감 창구</b>.
+        </div>
+      </div>
+
+      <div class="layer l3">
+        <span class="layer-num">03 심층적</span>
+        <div class="layer-body">
+          <b>완벽하게 준비하지 않으면 불안한 성향</b>. 다수가 추천하는 "국민 아이템"에 강하게 반응하며, <b>내가 뭔가를 빠뜨리고 있을 것 같다는 두려움</b>이 정보 탐색의 주요 동기. 몸의 변화와 감정 기복을 기록하며 스스로 정리하려는 습관이 있음.
+        </div>
+      </div>
+
+      <div class="layer l4">
+        <span class="layer-num">04 추가 분석</span>
+        <div class="layer-body">
+          <span class="sub-item"><b>정보 과부하에 취약</b><br>산재된 정보보다 단계별로 정리된 안내를 선호</span>
+          <span class="sub-item"><b>신뢰 기반 행동</b><br>광고성 콘텐츠보다 실사용 후기·동료 추천을 높게 신뢰</span>
+          <span class="sub-item"><b>감정 공유 욕구</b><br>"나만 이런 게 아니다"라는 공감과 안심을 함께 원함</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>
