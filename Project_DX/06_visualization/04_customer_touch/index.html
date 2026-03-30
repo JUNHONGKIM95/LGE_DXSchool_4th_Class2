@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객감동목표</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            width: 960px;
+            max-width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .card-header {
+            background: linear-gradient(135deg, #c8102e 0%, #a50d22 100%);
+            padding: 20px 36px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .header-title {
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .header-subtitle {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 13px;
+            font-weight: 400;
+            margin-left: auto;
+        }
+
+        /* Body */
+        .card-body {
+            display: flex;
+            padding: 40px 48px;
+            gap: 40px;
+            align-items: center;
+            flex: 1;
+        }
+
+        /* Text Section */
+        .text-section {
+            flex: 1;
+        }
+
+        .quote-mark {
+            font-size: 64px;
+            color: #c8102e;
+            line-height: 1;
+            font-weight: 900;
+            margin-bottom: 8px;
+            opacity: 0.3;
+        }
+
+        .quote-text {
+            font-size: 27px;
+            font-weight: 500;
+            line-height: 1.7;
+            color: #2d2d2d;
+            letter-spacing: -0.5px;
+        }
+
+        .quote-text .highlight-red {
+            color: #c8102e;
+            font-weight: 800;
+        }
+
+        .quote-text .highlight-bold {
+            font-weight: 800;
+            color: #1a1a1a;
+        }
+
+        .quote-close {
+            font-size: 64px;
+            color: #c8102e;
+            line-height: 1;
+            font-weight: 900;
+            text-align: right;
+            margin-top: 8px;
+            opacity: 0.3;
+        }
+
+        /* Divider */
+        .divider {
+            width: 2px;
+            background: linear-gradient(180deg, transparent 0%, #e0e0e0 20%, #e0e0e0 80%, transparent 100%);
+            align-self: stretch;
+        }
+
+        /* Image Section */
+        .image-section {
+            flex: 0 0 380px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-section img {
+            width: 100%;
+            max-width: 360px;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+
+        @media (max-width: 700px) {
+            .card-body {
+                flex-direction: column;
+                padding: 28px 24px;
+            }
+            .divider {
+                width: 100%;
+                height: 2px;
+                background: linear-gradient(90deg, transparent 0%, #e0e0e0 20%, #e0e0e0 80%, transparent 100%);
+            }
+            .image-section {
+                flex: none;
+                width: 100%;
+            }
+            .quote-text {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- Header -->
+        <div class="card-header">
+            <div class="header-icon">❤️</div>
+            <span class="header-title">고객감동목표</span>
+            <span class="header-subtitle">Customer Touch Goal</span>
+        </div>
+
+        <!-- Body -->
+        <div class="card-body">
+            <!-- Text -->
+            <div class="text-section">
+                <div class="quote-mark">"</div>
+                <p class="quote-text">
+                    수많은 앱을 오가던 피로를 지우고,<br>
+                    <span class="highlight-red">예비맘</span><span class="highlight-bold">의 일상과 공간을 하나로 잇는</span><br>
+                    가장 완벽한 <span class="highlight-red">280일</span>을 선사합니다.
+                </p>
+                <div class="quote-close">"</div>
+            </div>
+
+            <!-- Divider -->
+            <div class="divider"></div>
+
+            <!-- Image -->
+            <div class="image-section">
+                <img src="src/actor0_action1_character.png" alt="예비맘 캐릭터 이미지">
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
